@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import PlayerCard from './components/PlayerCard';
 
@@ -8,6 +7,7 @@ export default function App() {
     <div>
        <title>{hudname}</title>
        <PlayerCard player='dikdama' countryflag='br'></PlayerCard>
+       
     </div>
   );
 }

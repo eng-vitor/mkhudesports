@@ -1,5 +1,4 @@
-// src/components/PlayerCard.js
-import React from 'react';
+import '../styles/PlayerCard.module.css';
 
 export default function PlayerCard({ player, countryflag,side }) {
   return (
