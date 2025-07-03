@@ -1,4 +1,5 @@
 import '../styles/PlayerCard.module.css';
+import PropTypes from 'PropType';
 
 export default function PlayerCard({ player, countryflag }) {
   return (
@@ -7,3 +8,8 @@ export default function PlayerCard({ player, countryflag }) {
     </div>
   );
 }
+
+PlayerCard.PropType = {
+  player: PropTypes.string,
+  countryflag: PropTypes.string,
+};
