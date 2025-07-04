@@ -1,5 +1,5 @@
 import '../styles/PlayerCard.module.css';
-import PropTypes from 'PropType';
+import PropTypes from 'prop-types';
 
 export default function PlayerCard({ player, countryflag }) {
   return (
