@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-import PlayerCard from './components/PlayerCard';
+import LeftCard from './components/LeftCard';
 export default function App() {
 
     const [bgcolordata, setbgcolordata] = useState('');
@@ -11,13 +11,15 @@ export default function App() {
     const stylemain = {
       'width': '1920px',
       'height': '1080px',
-      'background-color': bgcolordata
+ //     'background-color': bgcolordata
+      'background-image': 'url(/mk_default_frame.jpg)',
+      'background-size': 'cover'
     };
     return (
         <div>
           <div style={stylemain} className='chromascreen'>
             <title>mkhud</title>
-            <PlayerCard player='dikdama' countryflag='br'></PlayerCard>
+            <LeftCard player='dikdama' countryflag='brazil' score='0'></LeftCard>
           </div>
             <h2>Settings</h2>
             <section>

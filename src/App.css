@@ -1,3 +1,23 @@
 .chromascreen{
   background-color: #00FF00;
 }
+.card-left{
+    width: 750px;
+    height: 40px;
+    margin-left: 28px;
+    display: flex;
+    justify-content: center;
+}
+.card-left img{
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 6px;
+}
+.nameplayer{
+   margin-top: 4px;
+}
+.score-left{
+  width: 50px;
+}
