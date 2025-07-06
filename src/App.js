@@ -3,6 +3,8 @@ import './App.css';
 
 import LeftCard from './components/LeftCard';
 import RightCard from './components/RightCard';
+import MatchLabel from './components/MatchLabel';
+import MerchanSlider from './components/MerchanSlider';
 
 export default function App() {
 
@@ -21,8 +23,12 @@ export default function App() {
         <div>
           <div style={stylemain} className='chromascreen'>
             <title>mkhud</title>
-            <LeftCard teamtag='Luminosity G' player='dikdama' countryflag='brazil' score='0' isLoser={null}></LeftCard>
-            <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
+            <section className='cards'>
+              <LeftCard teamtag='Luminosity G' player='dikdama' countryflag='brazil' score='0' isLoser={null}></LeftCard>
+              <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
+            </section>
+            <MatchLabel Mlabel='Grand Final'></MatchLabel>
+            <MerchanSlider></MerchanSlider>
           </div>
             <h2>Settings</h2>
             <section>

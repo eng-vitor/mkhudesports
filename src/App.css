@@ -1,11 +1,20 @@
 .chromascreen{
   background-color: #00FF00;
+}
+.cards{
   display: flex;
   flex-wrap: nowrap;
 }
 .body-left, .body-right{
     display: flex;
     flex-wrap: nowrap;
+}
+.body-matchlabel{
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 75px auto;
 }
 .body-right{
   margin-left: 263px;
@@ -33,6 +42,10 @@
 }
 .nameplayer{
    margin-top: 4px;
+}
+.teamtag{
+  margin: 8px 15px;
+  font-size: 24px;
 }
 .score-left{
   width: 50px;
