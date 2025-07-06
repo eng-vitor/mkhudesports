@@ -1,5 +1,14 @@
 .chromascreen{
   background-color: #00FF00;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.body-left, .body-right{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.body-right{
+  margin-left: 263px;
 }
 .card-left{
     width: 750px;
@@ -8,7 +17,14 @@
     display: flex;
     justify-content: center;
 }
-.card-left img{
+.card-right{
+    width: 750px;
+    height: 40px;
+    margin-right: 28px;
+    display: flex;
+    justify-content: center;
+}
+.card-left img, .card-right img{
     width: 32px;
     height: 32px;
     padding: 0;
@@ -20,4 +36,11 @@
 }
 .score-left{
   width: 50px;
+  margin-top: 4px;
+  justify-content: center;
+}
+.score-right{
+  width: 50px;
+  margin-top: 4px;
+  justify-content: center;
 }

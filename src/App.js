@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 
 import LeftCard from './components/LeftCard';
+import RightCard from './components/RightCard';
+
 export default function App() {
 
     const [bgcolordata, setbgcolordata] = useState('');
@@ -19,7 +21,8 @@ export default function App() {
         <div>
           <div style={stylemain} className='chromascreen'>
             <title>mkhud</title>
-            <LeftCard player='dikdama' countryflag='brazil' score='0'></LeftCard>
+            <LeftCard teamtag='Luminosity G' player='dikdama' countryflag='brazil' score='0' isLoser={null}></LeftCard>
+            <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
           </div>
             <h2>Settings</h2>
             <section>
