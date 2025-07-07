@@ -8,10 +8,14 @@ import MerchanSlider from './components/MerchanSlider';
 
 export default function App() {
 
-    const [bgcolordata, setbgcolordata] = useState('');
-    const backgroundChange = (e) => {
-      setbgcolordata(e.target.value);
-    };
+    const [bgColorData, setBgColorData] = useState('');
+    const [teamTagPlayerOne, setTeamTagPlayerone] = useState('');
+    const [namePlayerOne, setNamePlayerOne] = useState('');
+
+    const backgroundChange = (e) => { setBgColorData(e.target.value); };
+    const TeamTagPlayerOneChange = (e) => { setTeamTagPlayerone(e.target.value); };
+    const NamePlayerOneChange = (e) => { setNamePlayerOne(e.target.value);};
+
     const stylemain = {
       'width': '1920px',
       'height': '1080px',
@@ -24,10 +28,10 @@ export default function App() {
           <div style={stylemain} className='chromascreen'>
             <title>mkhud</title>
             <section className='cards'>
-              <LeftCard teamtag='Luminosity G' player='dikdama' countryflag='brazil' score='0' isLoser={null}></LeftCard>
+              <LeftCard teamtag={teamTagPlayerOne ? teamTagPlayerOne : 'TeamOne'} player={namePlayerOne ? namePlayerOne : 'PlayerOne'} countryflag='brazil' score='0' isLoser={null}></LeftCard>
               <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
             </section>
-            <MatchLabel Mlabel='Grand Final'></MatchLabel>
+            <MatchLabel Mlabel='Winners Semi Final'></MatchLabel>
             <section className='merchan-area'>
               <MerchanSlider></MerchanSlider>
             </section>
@@ -40,7 +44,9 @@ export default function App() {
             <section>
               <h2>Player 1 Data</h2>
               <span>Name</span>
-              <input type='text'></input>
+              <input type='text' onChange={NamePlayerOneChange}></input>
+              <span>Team tag</span>
+              <input type='text' onChange={TeamTagPlayerOneChange}></input>
               <span>Flag</span>
               <input type='text'></input>
               <span>Loser bracket</span>

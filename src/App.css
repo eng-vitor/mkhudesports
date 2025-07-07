@@ -10,13 +10,18 @@
     flex-wrap: nowrap;
 }
 .body-matchlabel{
-  width: 200px;
+  width: 220px;
   height: 40px;
   display: flex;
   justify-content: center;
   margin: 75px auto;
   background-image: url('../public/background_match_label.png');
   background-size: cover;
+}
+.body-matchlabel p{
+  font-size: 22px;
+  justify-content: center;
+  padding-top: 5px;
 }
 .body-right{
   margin-left: 263px;
