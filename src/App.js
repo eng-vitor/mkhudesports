@@ -28,7 +28,9 @@ export default function App() {
               <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
             </section>
             <MatchLabel Mlabel='Grand Final'></MatchLabel>
-            <MerchanSlider></MerchanSlider>
+            <section className='merchan-area'>
+              <MerchanSlider></MerchanSlider>
+            </section>
           </div>
             <h2>Settings</h2>
             <section>
