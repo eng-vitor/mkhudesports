@@ -5,7 +5,7 @@ export default function LeftCard({ player, countryflag, score, isloser, teamtag}
   return (
     <div className='body-left'>
       <section className='card-left'>
-        <p><img src={'/countryflags/'+countryflag+'.png'}/><span className='teamtag'>{teamtag}</span><span className='nameplayer'>{player}<small>{isloser ? '[L]': ''}</small></span></p>
+        <p><img src={'/countryflags/'+countryflag+'.png'} alt='left-background-image'/><span className='teamtag'>{teamtag}</span><span className='nameplayer'>{player}<small className='loser-bracket-title'>{isloser ? '[L]': ''}</small></span></p>
       </section>
       <p className='score-left'>{score}</p>
     </div>
@@ -16,5 +16,5 @@ LeftCard.PropType = {
   player: PropTypes.string,
   countryflag: PropTypes.string,
   score: PropTypes.number,
-  isloser: PropTypes.number
+  isloser: PropTypes.boolean
 };

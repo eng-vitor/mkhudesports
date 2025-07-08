@@ -6,7 +6,7 @@ export default function RightCard({ player, countryflag, score, isloser, teamtag
     <div className='body-right'>
         <p className='score-right'>{score}</p>
         <section className='card-right'>
-            <p><img src={'/countryflags/'+countryflag+'.png'}/><span className='teamtag'>{teamtag}</span><span className='nameplayer'>{player}<small>{isloser ? '[L]': ''}</small></span></p>
+            <p><img src={'/countryflags/'+countryflag+'.png'} alt='right-background-image'/><span className='teamtag'>{teamtag}</span><span className='nameplayer'>{player}<small className='loser-bracket-title'>{isloser ? '[L]': ''}</small></span></p>
         </section>
     </div>
   );
