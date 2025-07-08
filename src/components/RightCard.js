@@ -16,5 +16,5 @@ RightCard.PropType = {
   player: PropTypes.string,
   countryflag: PropTypes.string,
   score: PropTypes.number,
-  isloser: PropTypes.number
+  isloser: PropTypes.boolean
 };
