@@ -322,44 +322,42 @@ export default function App() {
           <div className='configs'>
               <section>
                 <h2>General Settings</h2>
-                <span>Chroma Key Background</span>
-                <input type='color' name='chromakeyer' onChange={backgroundChange} defaultValue='#00FF00'/>
-                <span>Match label</span>
-                <input type='text'name='matchlabel' onChange={MatchLabelChange}></input>
+                <ul>
+                  <li><span>Chroma Key Background</span><input type='color' onChange={backgroundChange} defaultValue='#00FF00'/></li>
+                  <li><span>Match label</span><input type='text' onChange={MatchLabelChange}></input></li>
+                </ul>
               </section>
               <section>
                 <h2>Player 1 Data</h2>
-                <span>Name</span>
-                <input type='text' onChange={NamePlayerOneChange}></input>
-                <span>Team tag</span>
-                <input type='text' onChange={TeamTagPlayerOneChange}></input>
-                <span>Flag</span>
-                <select onChange={FlagPlayerOneChange}>
-                  {flags.map(function(flag) {
-                    return <option value={flag}>{flag}</option>;
-                  })}
-                </select>
-                <span>Loser bracket</span>
-                <button onClick={IsLoserPlayerOneChange}>{isLoserPlayerOne ? 'ON' : 'OFF'}</button>
-                <span>Score</span>
-                <input type='number' onChange={ScorePlayerOneChange} min='0' max='10' defaultValue='0'></input>
+                <ul>
+                  <li><span>Name</span><input type='text' onChange={NamePlayerOneChange}></input></li>
+                  <li><span>Team tag</span><input type='text' onChange={TeamTagPlayerOneChange}></input></li>
+                  <li><span>Flag</span>
+                      <select onChange={FlagPlayerOneChange}>
+                        {flags.map(function(flag) {
+                          return <option value={flag}>{flag}</option>;
+                        })}
+                      </select>
+                  </li>
+                  <li><span>Loser bracket</span><button onClick={IsLoserPlayerOneChange}>{isLoserPlayerOne ? 'ON' : 'OFF'}</button></li>
+                  <li><span>Score</span><input type='number' onChange={ScorePlayerOneChange} min='0' max='10' defaultValue='0'></input></li>
+                </ul>
               </section>
               <section>
                 <h2>Player 2 Data</h2>
-                <span>Name</span>
-                <input type='text' onChange={NamePlayerTwoChange}></input>
-                <span>Team tag</span>
-                <input type='text' onChange={TeamTagPlayerTwoChange}></input>
-                <span>Flag</span>
-                <select onChange={FlagPlayerTwoChange}>
-                  {flags.map(function(flag) {
-                    return <option value={flag}>{flag}</option>;
-                  })}
-                </select>
-                <span>Loser bracket</span>
-                <button onClick={IsLoserPlayerTwoChange}>{isLoserPlayerTwo ? 'ON' : 'OFF'}</button>
-                <span>Score</span>
-                <input type='number' onChange={ScorePlayerTwoChange} min='0' max='10' defaultValue='0'></input>
+                <ul>
+                  <li><span>Name</span><input type='text' onChange={NamePlayerTwoChange}></input></li>
+                  <li><span>Team tag</span><input type='text' onChange={TeamTagPlayerTwoChange}></input></li>
+                  <li><span>Flag</span>
+                      <select onChange={FlagPlayerTwoChange}>
+                        {flags.map(function(flag) {
+                          return <option value={flag}>{flag}</option>;
+                        })}
+                      </select>
+                  </li>
+                  <li><span>Loser bracket</span><button onClick={IsLoserPlayerTwoChange}>{isLoserPlayerTwo ? 'ON' : 'OFF'}</button></li>
+                  <li><span>Score</span><input type='number' onChange={ScorePlayerTwoChange} min='0' max='10' defaultValue='0'></input></li>
+                </ul>
               </section>
             </div>
         </div>

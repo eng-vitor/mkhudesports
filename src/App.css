@@ -85,3 +85,6 @@
   display: flex;
   margin: 20px auto;
 }
+.configs ul{
+  list-style-type: none;
+}
