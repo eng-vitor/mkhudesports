@@ -9,18 +9,33 @@ import MerchanSlider from './components/MerchanSlider';
 export default function App() {
 
     const [bgColorData, setBgColorData] = useState('');
-    const [teamTagPlayerOne, setTeamTagPlayerone] = useState('');
+    const [teamTagPlayerOne, setTeamTagPlayerOne] = useState('');
     const [namePlayerOne, setNamePlayerOne] = useState('');
     const [flagPlayerOne, setFlagPlayerOne] = useState('');
     const [isLoserPlayerOne, setIsLoserPlayerOne] = useState(false);
+    const [matchLabel, setMatchLabel] = useState('');
+    const [scorePlayerOne, setScorePlayerOne] = useState('');
+
+    const [teamTagPlayerTwo, setTeamTagPlayerTwo] = useState('');
+    const [namePlayerTwo, setNamePlayerTwo] = useState('');
+    const [flagPlayerTwo, setFlagPlayerTwo] = useState('');
+    const [isLoserPlayerTwo, setIsLoserPlayerTwo] = useState(false);
+    const [scorePlayerTwo, setScorePlayerTwo] = useState('');
 
     const backgroundChange = (e) => { setBgColorData(e.target.value); };
-    const TeamTagPlayerOneChange = (e) => { setTeamTagPlayerone(e.target.value); };
+    const TeamTagPlayerOneChange = (e) => { setTeamTagPlayerOne(e.target.value); };
     const NamePlayerOneChange = (e) => { setNamePlayerOne(e.target.value);};
     const FlagPlayerOneChange = (e) => { setFlagPlayerOne(e.target.value);};
-    const IsLoserPlayerOneChange = (e) => { setIsLoserPlayerOne(!isLoserPlayerOne);};
+    const IsLoserPlayerOneChange = () => { setIsLoserPlayerOne(!isLoserPlayerOne);};
+    const MatchLabelChange = (e) => { setMatchLabel(e.target.value);};
+    const ScorePlayerOneChange = (e) =>{ setScorePlayerOne(e.target.value)};
 
-    console.log(flagPlayerOne);
+    const TeamTagPlayerTwoChange = (e) => { setTeamTagPlayerTwo(e.target.value); };
+    const NamePlayerTwoChange = (e) => { setNamePlayerTwo(e.target.value);};
+    const FlagPlayerTwoChange = (e) => { setFlagPlayerTwo(e.target.value);};
+    const IsLoserPlayerTwoChange = () => { setIsLoserPlayerTwo(!isLoserPlayerTwo);};
+    const ScorePlayerTwoChange = (e) =>{ setScorePlayerTwo(e.target.value)};
+
     const stylemain = {
       'width': '1920px',
       'height': '1080px',
@@ -296,43 +311,57 @@ export default function App() {
           <div style={stylemain} className='chromascreen'>
             <title>mkhud</title>
             <section className='cards'>
-              <LeftCard teamtag={teamTagPlayerOne ? teamTagPlayerOne : 'TeamOne'} player={namePlayerOne ? namePlayerOne : 'PlayerOne'} countryflag={flagPlayerOne ? flagPlayerOne : 'Abkhazia'} score='0' isloser={isLoserPlayerOne}></LeftCard>
-              <RightCard teamtag='FURIA' player='voltaik007' countryflag='brazil' score='1' isLoser='1'></RightCard>
+              <LeftCard teamtag={teamTagPlayerOne ? teamTagPlayerOne : ''} player={namePlayerOne ? namePlayerOne : 'PlayerOne'} countryflag={flagPlayerOne ? flagPlayerOne : 'Abkhazia'} score={scorePlayerOne ? scorePlayerOne : '0'} isloser={isLoserPlayerOne}></LeftCard>
+              <RightCard teamtag={teamTagPlayerTwo ? teamTagPlayerTwo : ''} player={namePlayerTwo ? namePlayerTwo : 'PlayerTwo'} countryflag={flagPlayerTwo ? flagPlayerTwo : 'Abkhazia'} score={scorePlayerTwo ? scorePlayerTwo : '0'} isloser={isLoserPlayerTwo}></RightCard>
             </section>
-            <MatchLabel Mlabel='Winners Semi Final'></MatchLabel>
+            <MatchLabel Mlabel={matchLabel ? matchLabel : 'Pools A1'}></MatchLabel>
             <section className='merchan-area'>
               <MerchanSlider></MerchanSlider>
             </section>
           </div>
-            <h2>Settings</h2>
-            <section>
-              <span>Chroma Key Background</span>
-              <input type='color' onChange={backgroundChange} defaultValue='#00FF00'/>
-            </section>
-            <section>
-              <h2>Player 1 Data</h2>
-              <span>Name</span>
-              <input type='text' onChange={NamePlayerOneChange}></input>
-              <span>Team tag</span>
-              <input type='text' onChange={TeamTagPlayerOneChange}></input>
-              <span>Flag</span>
-              <select onChange={FlagPlayerOneChange}>
-                {flags.map(function(flag) {
-                  return <option value={flag}>{flag}</option>;
-                })}
-              </select>
-              <span>Loser bracket</span>
-              <button onClick={IsLoserPlayerOneChange}>{isLoserPlayerOne ? 'ON' : 'OFF'}</button>
-            </section>
-            <section>
-              <h2>Player 2 Data</h2>
-              <span>Name</span>
-              <input type='text'></input>
-              <span>Flag</span>
-              <input type='text'></input>
-              <span>Loser bracket</span>
-              <input type='checkbox'></input>
-            </section>
+          <div className='configs'>
+              <section>
+                <h2>General Settings</h2>
+                <span>Chroma Key Background</span>
+                <input type='color' name='chromakeyer' onChange={backgroundChange} defaultValue='#00FF00'/>
+                <span>Match label</span>
+                <input type='text'name='matchlabel' onChange={MatchLabelChange}></input>
+              </section>
+              <section>
+                <h2>Player 1 Data</h2>
+                <span>Name</span>
+                <input type='text' onChange={NamePlayerOneChange}></input>
+                <span>Team tag</span>
+                <input type='text' onChange={TeamTagPlayerOneChange}></input>
+                <span>Flag</span>
+                <select onChange={FlagPlayerOneChange}>
+                  {flags.map(function(flag) {
+                    return <option value={flag}>{flag}</option>;
+                  })}
+                </select>
+                <span>Loser bracket</span>
+                <button onClick={IsLoserPlayerOneChange}>{isLoserPlayerOne ? 'ON' : 'OFF'}</button>
+                <span>Score</span>
+                <input type='number' onChange={ScorePlayerOneChange} min='0' max='10' defaultValue='0'></input>
+              </section>
+              <section>
+                <h2>Player 2 Data</h2>
+                <span>Name</span>
+                <input type='text' onChange={NamePlayerTwoChange}></input>
+                <span>Team tag</span>
+                <input type='text' onChange={TeamTagPlayerTwoChange}></input>
+                <span>Flag</span>
+                <select onChange={FlagPlayerTwoChange}>
+                  {flags.map(function(flag) {
+                    return <option value={flag}>{flag}</option>;
+                  })}
+                </select>
+                <span>Loser bracket</span>
+                <button onClick={IsLoserPlayerTwoChange}>{isLoserPlayerTwo ? 'ON' : 'OFF'}</button>
+                <span>Score</span>
+                <input type='number' onChange={ScorePlayerTwoChange} min='0' max='10' defaultValue='0'></input>
+              </section>
+            </div>
         </div>
   );
 }

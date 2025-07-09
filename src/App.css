@@ -80,3 +80,8 @@
   font-size: 22px;
   margin-left: 20px;
 }
+.configs{
+  width: 1000px;
+  display: flex;
+  margin: 20px auto;
+}
