@@ -36,12 +36,6 @@ export default function App() {
     const IsLoserPlayerTwoChange = () => { setIsLoserPlayerTwo(!isLoserPlayerTwo);};
     const ScorePlayerTwoChange = (e) =>{ setScorePlayerTwo(e.target.value)};
 
-    const stylemain = {
-      'width': '1920px',
-      'height': '1080px',
-      'background-color': bgColorData,
-      'background-size': 'cover'
-    };
     let flags =['Abkhazia',
                 'Afghanistan',
                 'Aland',
@@ -308,11 +302,11 @@ export default function App() {
               ];
     return (
         <div>
-          <div style={stylemain} className='chromascreen'>
+          <div style={{'width': '1920px', 'height': '1080px', 'background-color': bgColorData, 'background-size': 'cover'}} className='chromascreen'>
             <title>mkhud</title>
             <section className='cards'>
-              <LeftCard teamtag={teamTagPlayerOne ? teamTagPlayerOne : ''} player={namePlayerOne ? namePlayerOne : 'PlayerOne'} countryflag={flagPlayerOne ? flagPlayerOne : 'Abkhazia'} score={scorePlayerOne ? scorePlayerOne : '0'} isloser={isLoserPlayerOne}></LeftCard>
-              <RightCard teamtag={teamTagPlayerTwo ? teamTagPlayerTwo : ''} player={namePlayerTwo ? namePlayerTwo : 'PlayerTwo'} countryflag={flagPlayerTwo ? flagPlayerTwo : 'Abkhazia'} score={scorePlayerTwo ? scorePlayerTwo : '0'} isloser={isLoserPlayerTwo}></RightCard>
+              <LeftCard teamtag={teamTagPlayerOne ? teamTagPlayerOne : ''} player={namePlayerOne ? namePlayerOne : 'PlayerOne'} countryflag={flagPlayerOne ? flagPlayerOne : 'Unknown'} score={scorePlayerOne ? scorePlayerOne : '0'} isloser={isLoserPlayerOne}></LeftCard>
+              <RightCard teamtag={teamTagPlayerTwo ? teamTagPlayerTwo : ''} player={namePlayerTwo ? namePlayerTwo : 'PlayerTwo'} countryflag={flagPlayerTwo ? flagPlayerTwo : 'Unknown'} score={scorePlayerTwo ? scorePlayerTwo : '0'} isloser={isLoserPlayerTwo}></RightCard>
             </section>
             <MatchLabel Mlabel={matchLabel ? matchLabel : 'Pools A1'}></MatchLabel>
             <section className='merchan-area'>
@@ -320,14 +314,15 @@ export default function App() {
             </section>
           </div>
           <div className='configs'>
-              <section>
+              <section className='col'>
                 <h2>General Settings</h2>
                 <ul>
+                  <li><span>Resolution</span><input type='text' defaultValue='1920x1080p' style={{'text-align': 'center'}} disabled/></li>
                   <li><span>Chroma Key Background</span><input type='color' onChange={backgroundChange} defaultValue='#00FF00'/></li>
                   <li><span>Match label</span><input type='text' onChange={MatchLabelChange}></input></li>
                 </ul>
               </section>
-              <section>
+              <section className='col'>
                 <h2>Player 1 Data</h2>
                 <ul>
                   <li><span>Name</span><input type='text' onChange={NamePlayerOneChange}></input></li>
@@ -335,15 +330,19 @@ export default function App() {
                   <li><span>Flag</span>
                       <select onChange={FlagPlayerOneChange}>
                         {flags.map(function(flag) {
-                          return <option value={flag}>{flag}</option>;
+                          if(flag==='Unknown'){
+                              return <option value={flag} selected>{flag}</option>;
+                          }else{
+                              return <option value={flag}>{flag}</option>;
+                          }
                         })}
                       </select>
                   </li>
                   <li><span>Loser bracket</span><button onClick={IsLoserPlayerOneChange}>{isLoserPlayerOne ? 'ON' : 'OFF'}</button></li>
-                  <li><span>Score</span><input type='number' onChange={ScorePlayerOneChange} min='0' max='10' defaultValue='0'></input></li>
+                  <li><span>Score</span><input type='number' onChange={ScorePlayerOneChange} min='0' max='10' defaultValue='0' style={{'text-align': 'center'}}></input></li>
                 </ul>
               </section>
-              <section>
+              <section className='col'>
                 <h2>Player 2 Data</h2>
                 <ul>
                   <li><span>Name</span><input type='text' onChange={NamePlayerTwoChange}></input></li>
@@ -351,12 +350,16 @@ export default function App() {
                   <li><span>Flag</span>
                       <select onChange={FlagPlayerTwoChange}>
                         {flags.map(function(flag) {
-                          return <option value={flag}>{flag}</option>;
+                          if(flag==='Unknown'){
+                              return <option value={flag} selected>{flag}</option>;
+                          }else{
+                              return <option value={flag}>{flag}</option>;
+                          }
                         })}
                       </select>
                   </li>
                   <li><span>Loser bracket</span><button onClick={IsLoserPlayerTwoChange}>{isLoserPlayerTwo ? 'ON' : 'OFF'}</button></li>
-                  <li><span>Score</span><input type='number' onChange={ScorePlayerTwoChange} min='0' max='10' defaultValue='0'></input></li>
+                  <li><span>Score</span><input type='number' onChange={ScorePlayerTwoChange} min='0' max='10' defaultValue='0' style={{'text-align': 'center'}}></input></li>
                 </ul>
               </section>
             </div>
