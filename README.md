@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# mkhudesports
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**An e‑sports application to matches of the videogame Mortal Kombat.**
 
-## Available Scripts
+## 🧩 Overview
 
-In the project directory, you can run:
+This project implements an HUD with chromakey for matches of Mortal Kombat.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Main Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Display of **team and player results and statistics**.
+- **Responsive design** for different screen sizes.
+- Reusable and modular components.
+- Use of **carousel** for featured content and interactive displays.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technologies Used
 
-### `npm run build`
+- [React](https://react.dev/)
+- [React Slick](https://github.com/akiran/react-slick) for sliders and carousels
+- [GoSquared Flags](https://github.com/gosquared/flags) for country flag display
+- CSS/SCSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+mkhudesports/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Slider/
+│   │   └── Flag/
+│   ├── data/
+│   ├── pages/
+│   ├── styles/
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-### `npm run eject`
+- `components/Slider`: carousel for matches and featured content.
+- `components/Flag`: displays country flags.
+- `pages`: main pages (e.g., home, matches, rankings).
+- `styles`: global and component-specific styles.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Running the Project Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/eng-vitor/mkhudesports.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install dependencies:
+   ```bash
+   cd mkhudesports
+   npm install
+   ```
 
-## Learn More
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Access the app in your browser:
+   ```
+   http://localhost:3000
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## ✅ Expected Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Match listings** with visual highlights.
+- **Updated rankings** for teams and players.
+- **Country flags** for visual identification.
+- **Interactive carousels** for smooth navigation.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎨 Acknowledgements
 
-### Making a Progressive Web App
+This project was inspired by and benefited from resources made available by the following open-source repositories:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [**GoSquared Flags**](https://github.com/gosquared/flags)  
+  A set of country flag icons used to represent countries in rankings and profiles.
 
-### Advanced Configuration
+- [**React Slick**](https://github.com/akiran/react-slick)  
+  A carousel library for React, used to create interactive and responsive sliders.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A huge thanks to the creators of these projects for providing high-quality open-source tools that helped shape this application.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome!  
+To suggest improvements, feel free to open an **issue** or submit a **pull request** following good practices.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Suggestion: use the [Conventional Commits](https://www.conventionalcommits.org/) standard to keep the commit history organized.
