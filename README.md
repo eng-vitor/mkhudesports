@@ -6,6 +6,8 @@
 
 This project implements an HUD with chromakey for matches of Mortal Kombat.
 
+![HUD_mk](/public/default_mkhud.png)
+
 ---
 
 ## 🚀 Main Features
